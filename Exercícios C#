@@ -1,0 +1,564 @@
+Lista 05 - Ternário
+
+1- a) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Números pares entre 0 e 100:");
+        for (int i = 0; i <= 100; i++)
+        {
+            // operador ternário: imprime só se for par
+            Console.Write(i % 2 == 0 ? i + " " : "");
+        }
+        Console.WriteLine();
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+b) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Digite um número inteiro positivo: ");
+        int n = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Números pares entre 0 e " + n + ":");
+        for (int i = 0; i <= n; i++)
+        {
+            Console.Write(i % 2 == 0 ? i + " " : "");
+        }
+        Console.WriteLine();
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+c) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Digite uma palavra: ");
+        string palavra = Console.ReadLine();
+
+        foreach (char letra in palavra)
+        {
+            string tipo = "aeiouAEIOU".IndexOf(letra) >= 0 ? "vogal" : "consoante";
+            Console.WriteLine(letra + " (" + tipo + ")");
+        }
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+d) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Digite um número inteiro positivo: ");
+        int n = int.Parse(Console.ReadLine());
+
+        int soma = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            soma += i;
+        }
+        Console.WriteLine(n > 0 ? "A soma de 1 até " + n + " é: " + soma : "O número deve ser positivo!");
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+e) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Digite um número inteiro: ");
+        int n = int.Parse(Console.ReadLine());
+
+        bool primo = n > 1;
+        for (int i = 2; i * i <= n; i++)
+        {
+            if (n % i == 0)
+            {
+                primo = false;
+                break;
+            }
+        }
+
+        Console.WriteLine(primo ? n + " é primo." : n + " não é primo.");
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+f) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Quantos números deseja digitar? ");
+        int qtd = int.Parse(Console.ReadLine());
+
+        Console.Write("Digite o 1º número: ");
+        int maior = int.Parse(Console.ReadLine());
+
+        for (int i = 2; i <= qtd; i++)
+        {
+            Console.Write("Digite o " + i + "º número: ");
+            int n = int.Parse(Console.ReadLine());
+
+            maior = n > maior ? n : maior;
+        }
+
+        Console.WriteLine("O maior número inserido é: " + maior);
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+g) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Tabuada do 5:");
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine("5 x " + i + " = " + (5 * i));
+        }
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+h) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Digite um número inteiro positivo: ");
+        int n = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Divisores de " + n + ":");
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write(n % i == 0 ? i + " " : "");
+        }
+        Console.WriteLine();
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+i) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Números primos entre 1 e 100:");
+        for (int n = 2; n <= 100; n++)
+        {
+            bool primo = true;
+            for (int i = 2; i * i <= n; i++)
+            {
+                if (n % i == 0)
+                {
+                    primo = false;
+                    break;
+                }
+            }
+            Console.Write(primo ? n + " " : "");
+        }
+        Console.WriteLine();
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+j) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int soma = 0;
+        for (int i = 1; i <= 100; i++)
+        {
+            // ternário: soma o número se for par, senão soma 0
+            soma += i % 2 == 0 ? i : 0;
+        }
+
+        Console.WriteLine("A soma dos números pares entre 1 e 100 é: " + soma);
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+Lista 05 - Vetor
+
+1- a) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] vetor = { 10, 25, 3, 47, 8 };
+
+        Console.WriteLine("Elementos do vetor:");
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.WriteLine("vetor[" + i + "] = " + vetor[i]);
+        }
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+b) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        string[] nome = new string[5];
+        double[] nota1 = new double[5];
+        double[] nota2 = new double[5];
+
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine("Aluno " + (i + 1) + ":");
+            Console.Write("  Nome: ");
+            nome[i] = Console.ReadLine();
+            Console.Write("  Nota 1: ");
+            nota1[i] = double.Parse(Console.ReadLine());
+            Console.Write("  Nota 2: ");
+            nota2[i] = double.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("===== LISTAGEM DE ALUNOS =====");
+        for (int i = 0; i < 5; i++)
+        {
+            double media = (nota1[i] + nota2[i]) / 2;
+            Console.WriteLine(nome[i] + " | Nota 1: " + nota1[i].ToString("F1")
+                + " | Nota 2: " + nota2[i].ToString("F1")
+                + " | Média: " + media.ToString("F2"));
+        }
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+c) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        double[] vetor = new double[5];
+        double soma = 0;
+
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.Write("Digite o valor " + (i + 1) + ": ");
+            vetor[i] = double.Parse(Console.ReadLine());
+            soma += vetor[i];
+        }
+
+        double media = soma / vetor.Length;
+        Console.WriteLine("A média dos valores é: " + media.ToString("F2"));
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+d) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] vetor = new int[5];
+
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.Write("Digite o valor " + (i + 1) + ": ");
+            vetor[i] = int.Parse(Console.ReadLine());
+        }
+
+        int maior = vetor[0];
+        for (int i = 1; i < vetor.Length; i++)
+        {
+            if (vetor[i] > maior)
+                maior = vetor[i];
+        }
+
+        Console.WriteLine("O maior valor do vetor é: " + maior);
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+e) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] vetor = new int[5];
+
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.Write("Digite o valor " + (i + 1) + ": ");
+            vetor[i] = int.Parse(Console.ReadLine());
+        }
+
+        int menor = vetor[0];
+        for (int i = 1; i < vetor.Length; i++)
+        {
+            if (vetor[i] < menor)
+                menor = vetor[i];
+        }
+
+        Console.WriteLine("O menor valor do vetor é: " + menor);
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+f) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] v1 = new int[5];
+        int[] v2 = new int[5];
+        int[] soma = new int[5];
+
+        Console.WriteLine("Primeiro vetor:");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write("  Elemento " + (i + 1) + ": ");
+            v1[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("Segundo vetor:");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write("  Elemento " + (i + 1) + ": ");
+            v2[i] = int.Parse(Console.ReadLine());
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            soma[i] = v1[i] + v2[i];
+        }
+
+        Console.WriteLine("Vetor soma:");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine("soma[" + i + "] = " + v1[i] + " + " + v2[i] + " = " + soma[i]);
+        }
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+g) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] v1 = new int[5];
+        int[] v2 = new int[5];
+        int[] soma = new int[5];
+
+        int i = 0;
+        while (i < 5)
+        {
+            Console.Write("Vetor 1 - elemento " + (i + 1) + ": ");
+            v1[i] = int.Parse(Console.ReadLine());
+            Console.Write("Vetor 2 - elemento " + (i + 1) + ": ");
+            v2[i] = int.Parse(Console.ReadLine());
+            soma[i] = v1[i] + v2[i];
+            i++;
+        }
+
+        Console.Write("Vetor soma: ");
+        foreach (int valor in soma)
+        {
+            Console.Write(valor + " ");
+        }
+        Console.WriteLine();
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+h) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] vetor = new int[5];
+
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.Write("Digite o valor " + (i + 1) + ": ");
+            vetor[i] = int.Parse(Console.ReadLine());
+        }
+
+        Array.Sort(vetor);
+        Array.Reverse(vetor);
+
+        Console.WriteLine("Vetor em ordem decrescente:");
+        foreach (int valor in vetor)
+        {
+            Console.Write(valor + " ");
+        }
+        Console.WriteLine();
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+i) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        string[] nomes = new string[10];
+
+        for (int i = 0; i < nomes.Length; i++)
+        {
+            Console.Write("Digite o nome " + (i + 1) + ": ");
+            nomes[i] = Console.ReadLine();
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("===== LISTAGEM DE NOMES =====");
+        for (int i = 0; i < nomes.Length; i++)
+        {
+            Console.WriteLine((i + 1) + " - " + nomes[i]);
+        }
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
+
+j) using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        const int TOTAL = 40;
+        string[] nome = new string[TOTAL];
+        int[] quantidade = new int[TOTAL];
+        double[] preco = new double[TOTAL];
+        bool cadastrado = false;
+        int opcao;
+
+        do
+        {
+            Console.Clear();
+            Console.WriteLine("MENU");
+            Console.WriteLine("1. Cadastra mercadorias");
+            Console.WriteLine("2. Exibe valor total em mercadorias da empresa");
+            Console.WriteLine("3. Sair");
+            Console.Write("OPÇÃO: ");
+            opcao = int.Parse(Console.ReadLine());
+
+            switch (opcao)
+            {
+                case 1:
+                    for (int i = 0; i < TOTAL; i++)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Mercadoria " + (i + 1) + " de " + TOTAL + ":");
+                        Console.Write("  Nome: ");
+                        nome[i] = Console.ReadLine();
+                        Console.Write("  Quantidade em estoque: ");
+                        quantidade[i] = int.Parse(Console.ReadLine());
+                        Console.Write("  Preço unitário: ");
+                        preco[i] = double.Parse(Console.ReadLine());
+                    }
+                    cadastrado = true;
+                    Console.WriteLine();
+                    Console.WriteLine("Mercadorias cadastradas com sucesso!");
+                    break;
+
+                case 2:
+                    if (!cadastrado)
+                    {
+                        Console.WriteLine("Cadastre as mercadorias primeiro (opção 1).");
+                    }
+                    else
+                    {
+                        double valorTotal = 0;
+                        for (int i = 0; i < TOTAL; i++)
+                        {
+                            valorTotal += quantidade[i] * preco[i];
+                        }
+                        Console.WriteLine("Valor total em mercadorias: R$ " + valorTotal.ToString("F2"));
+                    }
+                    break;
+
+                case 3:
+                    Console.WriteLine("Encerrando o programa...");
+                    break;
+
+                default:
+                    Console.WriteLine("Opção inválida!");
+                    break;
+            }
+
+            if (opcao != 3)
+            {
+                Console.Write("Pressione qualquer tecla para voltar ao menu . . . ");
+                Console.ReadKey(true);
+            }
+        } while (opcao != 3);
+
+        Console.Write("Pressione qualquer tecla para continuar . . . ");
+        Console.ReadKey(true);
+    }
+}
